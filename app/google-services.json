@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "607604045132",
+    "firebase_url": "https://agrimobi-7ce79.firebaseio.com",
+    "project_id": "agrimobi-7ce79",
+    "storage_bucket": "agrimobi-7ce79.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:607604045132:android:7c3693ad97e6b445",
+        "android_client_info": {
+          "package_name": "com.bydeone.agrimobi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "607604045132-tk74rs9rm3ahceomn86c0iblt5i7n61e.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.bydeone.agrimobi",
+            "certificate_hash": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+          }
+        },
+        {
+          "client_id": "607604045132-6vjmhs82k5jg2k6kt9cok82s0ea0pp91.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDo96e9IgT8pCnG3v4t02cnd_zriZ8uSsE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "607604045132-6vjmhs82k5jg2k6kt9cok82s0ea0pp91.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
