@@ -1,9 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".Controllers.SignUp">
 
-</android.support.constraint.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="@dimen/size_image_width"
+            android:layout_height="@dimen/size_image_height"
+            android:src="@drawable/kofisa" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        android:orientation="vertical"
+        android:layout_weight="1"
+        android:gravity="center">
+
+        <EditText
+            android:id="@+id/EdtLogin"
+            android:hint="Entrer votre login"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginVertical="10dp"
+            android:inputType="textEmailAddress"
+            android:textSize="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/EdtPassword"
+            android:hint="Entrer votre password"
+            android:layout_marginHorizontal="10dp"
+            android:inputType="textPassword"
+            android:textSize="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/goToHome"
+            android:text="CONNEXION"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginVertical="10dp"
+            android:textSize="20dp"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/goToSignIn"
+            android:text="No account ? Sign in here."
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginVertical="10dp"
+            android:textSize="20dp"
+            android:gravity="center"
+            android:textColor="#00A"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1.75"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/TvFooter"
+            android:text="KofiSa - byDeone - 2019"
+            android:textSize="20dp"
+            android:gravity="center"
+            android:textColor="#00A"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+</LinearLayout>
