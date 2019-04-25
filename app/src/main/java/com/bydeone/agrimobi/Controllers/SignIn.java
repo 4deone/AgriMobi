@@ -38,11 +38,12 @@ public class SignIn extends AppCompatActivity {
 
         firebaseAuth = FirebaseAuth.getInstance();
 
-        configureSignUpLogin();
-        configureSignUpPassword();
-        configureSignUpConfirmPassword();
-        configureAcceptCondition();
-        configureGoToSignUp();
+        this.configureSignUpLogin();
+        this.configureSignUpPassword();
+        this.configureSignUpConfirmPassword();
+        this.configureAcceptCondition();
+        this.configureGoToSignUp();
+        this.configureProgressBar();
     }
 
     // ----
@@ -98,11 +99,6 @@ public class SignIn extends AppCompatActivity {
 
     // ----
 
-    private void launchSignUpActivity(){
-        Intent myIntent = new Intent(SignIn.this, SignUp.class);
-        this.startActivity(myIntent);
-    }
-
     private void registreUser(){
         String email = signUpLogin.getText().toString().trim();
         String password = signUpPassword.getText().toString().trim();
@@ -128,18 +124,19 @@ public class SignIn extends AppCompatActivity {
             return;
         }
 
-        progressDialog.setMessage("Register User ...");
+        progressDialog.setMessage("Register please wait ...");
         progressDialog.show();
 
         firebaseAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
-                    Toast.makeText(SignIn.this, "Registered successfully", Toast.LENGTH_SHORT).show();
-                    launchSignUpActivity();
+                    finish();
+                    startActivity(new Intent(getApplicationContext(), SignUp.class));
                 }else {
-                    Toast.makeText(SignIn.this, "Registered failled", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(SignIn.this, "Registered error", Toast.LENGTH_SHORT).show();
                 }
+                progressDialog.dismiss();
             }
         });
     }

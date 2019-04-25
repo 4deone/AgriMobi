@@ -22,10 +22,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        configureDetailKofisa();
-        configureConnexionKofisa();
-        configureConnexionGoogle();
-        configureConnexionFacebook();
+        this.configureDetailKofisa();
+        this.configureConnexionKofisa();
+        this.configureConnexionGoogle();
+        this.configureConnexionFacebook();
     }
 
     // ----
