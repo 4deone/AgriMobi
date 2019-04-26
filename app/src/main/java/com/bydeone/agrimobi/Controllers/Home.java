@@ -1,6 +1,7 @@
 package com.bydeone.agrimobi.Controllers;
 
 import android.content.Intent;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -10,15 +11,20 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bydeone.agrimobi.Models.AllFragmentAdapter;
 import com.bydeone.agrimobi.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class Home extends AppCompatActivity {
 
+
+    private TextView userName;
+    private ViewPager viewPager;
+    private AllFragmentAdapter allFragmentAdapter;
+
     private FirebaseAuth firebaseAuth;
     private FirebaseUser user;
-    private TextView userName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +43,8 @@ public class Home extends AppCompatActivity {
         user = firebaseAuth.getCurrentUser();
 
         this.configureUserName();
+        this.configureViewPager();
+        this.configureAllFragmentAdapter();
 
 
     }
@@ -83,5 +91,16 @@ public class Home extends AppCompatActivity {
         this.userName = (TextView) this.findViewById(R.id.goToSignIn);
         // Set Text
         userName.setText("Bienvenue sur KofiSa, " + user.getEmail());
+    }
+
+    private void configureViewPager(){
+        // Serialise ImageView
+        this.viewPager = this.findViewById(R.id.homeViewPager);
+    }
+
+    private void configureAllFragmentAdapter(){
+        // Serialise ImageView
+        this.allFragmentAdapter = new AllFragmentAdapter(getSupportFragmentManager());
+        viewPager.setAdapter(allFragmentAdapter);
     }
 }

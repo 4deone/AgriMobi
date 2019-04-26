@@ -11,29 +11,14 @@
     <!-- Importation de notre Toolbar -->
     <include
         layout="@layout/toolbar"
+        android:layout_weight="10"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="match_parent" />
 
-    <LinearLayout
+    <android.support.v4.view.ViewPager
+        android:id="@+id/homeViewPager"
+        android:layout_weight="1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center">
-
-        <ImageView
-            android:layout_width="@dimen/size_image_width"
-            android:layout_height="@dimen/size_image_height"
-            android:src="@drawable/kofisa" />
-
-        <TextView
-            android:id="@+id/userName"
-            android:text="Bienvenue sur KofiSa"
-            android:textSize="30dp"
-            android:gravity="center"
-            android:textColor="#00A"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
-    </LinearLayout>
+        android:layout_height="match_parent" />
 
 </LinearLayout>
