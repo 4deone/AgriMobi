@@ -67,7 +67,8 @@ public class Home extends AppCompatActivity {
                 Toast.makeText(this, "Recherche indisponible, demandez plutôt l'avis de Google, c'est mieux et plus rapide.", Toast.LENGTH_LONG).show();
                 return true;
             case R.id.menu_activity_main_profile:
-                Toast.makeText(this, "Recherche indisponible, demandez plutôt l'avis de Google, c'est mieux et plus rapide.", Toast.LENGTH_LONG).show();
+                finish();
+                startActivity(new Intent(this, MonProfile.class));
                 return true;
             case R.id.menu_activity_main_logOut:
                 firebaseAuth.signOut();
