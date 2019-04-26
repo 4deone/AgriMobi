@@ -23,6 +23,14 @@
           }
         },
         {
+          "client_id": "607604045132-r8fna00t0ojourg70he09firtuaalsb6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.bydeone.agrimobi",
+            "certificate_hash": "8be2c84d9b2f6bfba74bd9dc9d5c77868f96ff80"
+          }
+        },
+        {
           "client_id": "607604045132-6vjmhs82k5jg2k6kt9cok82s0ea0pp91.apps.googleusercontent.com",
           "client_type": 3
         }

@@ -28,4 +28,20 @@ public class User {
         this.userPhone = userPhone;
         this.userAdress = userAdress;
     }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public String getUserPassword() {
+        return userPassword;
+    }
+
+    public String getUserPhone() {
+        return userPhone;
+    }
+
+    public String getUserAdress() {
+        return userAdress;
+    }
 }

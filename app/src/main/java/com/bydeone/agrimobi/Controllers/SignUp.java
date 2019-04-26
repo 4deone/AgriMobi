@@ -18,7 +18,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class SignUp extends AppCompatActivity {
+public class SignUp extends AppCompatActivity implements View.OnClickListener {
 
     private EditText signUpLogin;
     private EditText signUpPassword;
@@ -41,58 +41,20 @@ public class SignUp extends AppCompatActivity {
             startActivity(new Intent(getApplicationContext(), Home.class));
         }
 
-        this.configureSignUpLogin();
-        this.configureSignUpPassword();
-        this.configureGoToSignIn();
-        this.configureGoToHome();
+        progressDialog = new ProgressDialog(this);
+        signUpLogin = (EditText) this.findViewById(R.id.EdtLogin);
+        signUpPassword = (EditText) this.findViewById(R.id.EdtPassword);
+        goToSignIn = (TextView) this.findViewById(R.id.goToSignIn);
+        goToHome = (Button) this.findViewById(R.id.goToHome);
+
+        goToSignIn.setOnClickListener(this);
+        goToHome.setOnClickListener(this);
+
+
     }
 
     // ----
 
-    private void configureSignUpLogin(){
-        // Serialise ImageView
-        this.signUpLogin = (EditText) this.findViewById(R.id.EdtLogin);
-        // Set OnClick Listener on it
-
-    }
-
-    private void configureSignUpPassword(){
-        // Serialise ImageView
-        this.signUpPassword = (EditText) this.findViewById(R.id.EdtPassword);
-        // Set OnClick Listener on it
-
-    }
-
-    private void configureGoToSignIn(){
-        // Serialise ImageView
-        this.goToSignIn = (TextView) this.findViewById(R.id.goToSignIn);
-        // Set OnClick Listener on it
-        goToSignIn.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View v) {
-                //Launch Detail Activity
-                launchSignInActivity();
-            }
-        });
-    }
-
-    private void configureGoToHome(){
-        // Serialise ImageView
-        this.goToHome = (Button) this.findViewById(R.id.goToHome);
-        // Set OnClick Listener on it
-        goToHome.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View v) {
-                //Launch Detail Activity
-                launchHomeActivity();
-            }
-        });
-    }
-
-    // ----
-
-    private void configureProgressBar(){
-        // Serialise ImageView
-        this.progressDialog = new ProgressDialog(this);
-    }
 
     private void launchHomeActivity(){
         String email = signUpLogin.getText().toString().trim();
@@ -124,8 +86,14 @@ public class SignUp extends AppCompatActivity {
                 });
     }
 
-    private void launchSignInActivity(){
-        finish();
-        this.startActivity(new Intent(SignUp.this, SignIn.class));
+
+    @Override
+    public void onClick(View v) {
+        if (v == goToHome){
+            launchHomeActivity();
+        }else if (v == goToSignIn){
+            finish();
+            this.startActivity(new Intent(SignUp.this, SignIn.class));
+        }
     }
 }

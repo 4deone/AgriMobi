@@ -8,17 +8,53 @@
     android:orientation="vertical"
     tools:context=".Controllers.Home">
 
-    <!-- Importation de notre Toolbar -->
-    <include
-        layout="@layout/toolbar"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_weight="10"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:orientation="horizontal"
+        android:background="#ABC"
+        android:gravity="center" >
 
-    <android.support.v4.view.ViewPager
-        android:id="@+id/homeViewPager"
-        android:layout_weight="1"
+        <TextView
+            android:id="@+id/tvHomeTitle"
+            android:layout_width="9dp"
+            android:layout_height="match_parent"
+            android:layout_weight="11"
+            android:gravity="center"
+            android:text="KofiSa !"
+            android:textColor="#FFFFFF"
+            android:textSize="30dp" />
+        <Button
+            android:id="@+id/btLogOff"
+            android:text="DECONNEXION"
+            android:layout_weight="1"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginVertical="10dp"
+            android:textSize="20dp"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/tvHome"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="KofiSa, l'achat en ligne de produits agricoles qui va changer nos vies !"
+            android:textSize="30dp"
+            android:padding="@dimen/padding_title"
+            android:textAlignment="center"
+            android:textColor="#000"/>
+
+    </LinearLayout>
 
 </LinearLayout>

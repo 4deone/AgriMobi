@@ -20,7 +20,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class SignIn extends AppCompatActivity {
+public class SignIn extends AppCompatActivity implements View.OnClickListener {
 
     private EditText signUpLogin;
     private EditText signUpPassword;
@@ -38,39 +38,19 @@ public class SignIn extends AppCompatActivity {
 
         firebaseAuth = FirebaseAuth.getInstance();
 
-        this.configureSignUpLogin();
-        this.configureSignUpPassword();
-        this.configureSignUpConfirmPassword();
-        this.configureAcceptCondition();
-        this.configureGoToSignUp();
-        this.configureProgressBar();
+        signUpLogin = (EditText) this.findViewById(R.id.EdtLogin);
+        signUpPassword = (EditText) this.findViewById(R.id.EdtPassword);
+        signUpConfirmPassword = (EditText) this.findViewById(R.id.EdtConfirmPassword);
+        acceptCondition = (CheckBox) this.findViewById(R.id.acceptConditions);
+        goToSignUp = (Button) this.findViewById(R.id.goToSignUp);
+        progressDialog = new ProgressDialog(this);
     }
 
     // ----
 
-    private void configureSignUpLogin(){
-        // Serialise ImageView
-        this.signUpLogin = (EditText) this.findViewById(R.id.EdtLogin);
-
-    }
-
-    private void configureSignUpPassword(){
-        // Serialise ImageView
-        this.signUpPassword = (EditText) this.findViewById(R.id.EdtPassword);
-        // Set OnClick Listener on it
-
-    }
-
-    private void configureSignUpConfirmPassword(){
-        // Serialise ImageView
-        this.signUpConfirmPassword = (EditText) this.findViewById(R.id.EdtConfirmPassword);
-        // Set OnClick Listener on it
-
-    }
-
     private void configureAcceptCondition(){
         // Serialise ImageView
-        this.acceptCondition = (CheckBox) this.findViewById(R.id.acceptConditions);
+        this.
         // Set OnClick Listener on it
         acceptCondition.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
@@ -78,23 +58,6 @@ public class SignIn extends AppCompatActivity {
                 //launchSignInActivity();
             }
         });
-    }
-
-    private void configureGoToSignUp(){
-        // Serialise ImageView
-        this.goToSignUp = (Button) this.findViewById(R.id.goToSignUpp);
-        // Set OnClick Listener on it
-        goToSignUp.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View v) {
-                //Launch Detail Activity
-                registreUser();
-            }
-        });
-    }
-
-    private void configureProgressBar(){
-        // Serialise ImageView
-        this.progressDialog = new ProgressDialog(this);
     }
 
     // ----
@@ -142,4 +105,10 @@ public class SignIn extends AppCompatActivity {
     }
 
 
+    @Override
+    public void onClick(View v) {
+        if (v == goToSignUp){
+            registreUser();
+        }
+    }
 }

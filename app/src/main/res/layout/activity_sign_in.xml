@@ -70,7 +70,7 @@
             android:layout_height="wrap_content" />
 
         <Button
-            android:id="@+id/goToSignUpp"
+            android:id="@+id/goToSignUp"
             android:text="ENREGISTREMENT"
             android:layout_marginHorizontal="10dp"
             android:layout_marginVertical="10dp"
